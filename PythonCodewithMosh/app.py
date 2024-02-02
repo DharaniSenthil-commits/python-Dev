@@ -124,3 +124,98 @@ elif age >= 13:
 else:
     print("child")
 print("All Done !")
+
+# logical operator
+
+name = " "
+if not name.strip():
+    print("Name is empty")
+age = 24
+if age >= 18 and age < 65:
+    print("Eligibleee")
+if 18 <= age < 65:
+    print("Elligible")
+
+
+# Ternary Operator
+
+y = 10
+message = ">= 10" if y >= 10 else "<10"
+print(message)
+
+# for loop
+for i in "python":
+    print(i)
+
+for i in ['1', 'a']:
+    print(i)
+
+for i in range(0, 10, 2):
+    print(i)
+
+print(type(range(5)))
+print([1, 2, 3])
+
+names = ["john", "Mosh"]
+for name in names:
+    if name.startswith('j'):
+        print("Found")
+        break
+else:
+    print("not found")
+
+# while loop
+answer = 5
+guess = 0
+
+while guess != answer:
+    guess = int(input("Guess : "))
+else:
+    pass
+
+# function
+
+
+def increment(number: int, by: int = 1) -> tuple:
+    return (number, number+by)
+
+
+print(increment(5))
+
+
+# arguments xargs
+
+def multiply(*list) -> int:
+    total = 1
+    for number in list:
+        total *= number
+    return total
+
+
+print(multiply(2, 3, 4, 5))
+
+# arguments xxargs
+
+
+def save_user(**user) -> str:
+    return (user["id"])
+
+
+print(save_user(id="1", name="Mosh"))
+
+
+# scope
+
+message = "a"
+
+
+def greet():
+    global message
+    message = "b"
+    if True:
+        msg = "aa"
+    print(msg)
+
+
+greet()
+print(message)

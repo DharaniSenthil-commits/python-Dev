@@ -1,5 +1,5 @@
 from collections import deque
-
+from array import array
 # List
 from collections import deque
 letters = ['a', 'b', 'c']
@@ -114,3 +114,59 @@ queue.popleft()
 print(queue)
 if not queue:
     print("empty")
+
+# tuples
+
+point = (1, 2)
+print(type(point))
+point = 1, 2
+print(type(point))
+point = 1,
+print(type(point))
+point = (1, 2)+(3, 4)
+print(point)
+point = (1, 2)*3
+print(point)
+
+point = tuple([1, 2])
+print(point)
+point = tuple('Dhara')
+print(point)
+point = (1, 2, 3)
+print(point[0:])
+
+x, y, x = point
+if 1 in point:
+    print("Exists")
+
+a = 10
+b = 20
+a, b = b, a
+print(a, b)
+
+# Arrays
+
+arrayNumbers = array("i", [1, 2, 3])
+print(arrayNumbers)
+print(arrayNumbers[0])
+
+
+# Sets
+
+setNumbers = [1, 1, 2, 3, 4]
+unique = set(setNumbers)
+secondSet = {1, 4}
+secondSet.add(5)
+secondSet.remove(5)
+print(len(unique))
+print(unique)
+
+firstSet = {1, 1, 2, 3, 4}
+secondSet = {1, 5}
+print(firstSet | secondSet)
+print(firstSet & secondSet)
+print(firstSet - secondSet)
+print(firstSet ^ secondSet)
+
+if 1 in firstSet:
+    print("Yes")

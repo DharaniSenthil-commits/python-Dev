@@ -1,5 +1,6 @@
 from collections import deque
 from array import array
+from sys import getsizeof
 # List
 from collections import deque
 letters = ['a', 'b', 'c']
@@ -153,6 +154,8 @@ print(arrayNumbers[0])
 
 # Sets
 
+Setvalues = {x*2 for x in range(5)}
+print(Setvalues)
 setNumbers = [1, 1, 2, 3, 4]
 unique = set(setNumbers)
 secondSet = {1, 4}
@@ -170,3 +173,47 @@ print(firstSet ^ secondSet)
 
 if 1 in firstSet:
     print("Yes")
+
+# Dictionaries
+
+axis = {"x": 1, "y": 2}
+axis = dict(x=1, y=2)
+axis["x"] = 10
+axis["z"] = 20
+del axis["x"]
+print(axis)
+if "a" in axis:
+    print(axis["a"])
+print(axis.get("a", 0))
+for key in axis:
+    print(key, axis[key])
+for x in axis.items():
+    print(x)
+for key, value in axis.items():
+    print(key, value)
+
+# Dictionary Comprehension
+
+values = {x: x*2 for x in range(5)}
+print(values)
+
+# Generator object
+
+values = (x*2 for x in range(100000))
+print(getsizeof(values))
+values = [x*2 for x in range(100000)]
+print(getsizeof(values))
+
+# unpacking operator
+
+numbers = [1, 2, 3]
+print(1, 2, 3)
+print(*numbers)
+
+first = list(range(5))
+values = [*range(3), *"dq", first]
+
+first = {"x": 1}
+second = dict(x=10, y=20)
+combined = {**first, **second, "z": 30}
+print(combined)
